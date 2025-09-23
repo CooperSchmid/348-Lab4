@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      width: 250px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Password Verification</h2>
+
+  <label for="pass1">Enter password:</label><br>
+  <input type="password" id="pass1" placeholder="Enter password" /><br>
+
+  <label for="pass2">Re-enter password:</label><br>
+  <input type="password" id="pass2" placeholder="Re-enter password" /><br>
+
+  <button onclick="verifyPassword()">Verify Password</button>
+
+  <p id="result"></p>
+
+  <script>
+    function verifyPassword() {
+      const pass1 = document.getElementById('pass1').value;
+      const pass2 = document.getElementById('pass2').value;
+      const result = document.getElementById('result');
+
+      if (pass1.length < 8) {
+        result.style.color = 'red';
+        result.textContent = 'Password must be at least 8 characters long.';
+      } else if (pass1 !== pass2) {
+        result.style.color = 'red';
+        result.textContent = 'Passwords do not match. Please try again.';
+      } else {
+        result.style.color = 'green';
+        result.textContent = 'Password verified successfully!';
+      }
+    }
+  </script>
+</body>
+</html>
+

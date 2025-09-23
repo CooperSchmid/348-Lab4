@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Border and Text Color Control</title>
+</head>
+<body>
+
+  <p id="myParagraph" style="border: 2px solid black; padding: 10px; width: fit-content;">
+    Rock Chalk Jayhawk
+  </p>
+
+  <label>Border Color (RGB):</label>
+  <input type="text" id="borderColor"><br><br>
+
+  <label>Border Width:</label>
+  <input type="number" id="borderWidth"><br><br>
+
+  <label>Text Color (RGB):</label>
+  <input type="text" id="textColor"><br><br>
+
+  <button onclick="changeStyles()">Apply</button>
+
+  <script>
+    function changeStyles() {
+      const borderColor = document.getElementById("borderColor").value;
+      const borderWidth = document.getElementById("borderWidth").value;
+      const textColor = document.getElementById("textColor").value;
+
+      const paragraph = document.getElementById("myParagraph");
+      paragraph.style.borderColor = borderColor;
+      paragraph.style.borderWidth = borderWidth + "px";
+      paragraph.style.color = textColor;
+    }
+  </script>
+
+</body>
+</html>
+
+
